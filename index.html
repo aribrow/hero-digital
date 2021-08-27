@@ -15,51 +15,51 @@
                     <h3>*Indicates Required Field</h3>
                 </header>
 
-                <form>
-                <div class="form">
-                    <div class="inputWrapper">
-                        <label for="firstName">First Name*</label>                      
-                        <input class="required" name="firstName" type="text" />
-                    </div>
-                    <div class="inputWrapper">
-                        <label for="lastName">Last Name*</label>                      
-                        <input class="required" name="lastName" type="text" />
-                    </div>
-                    <div class="inputWrapper">
-                        <label for="email">Email Address*</label>                      
-                        <input class="required" name="email" type="email" />
-                    </div>
-                    <div class="inputWrapper">
-                        <label for="org">Organization</label>                      
-                        <input name="org" type="text" />
-                    </div>
-                    <div class="inputWrapper combo">
-                        <label for="euResident">EU Resident*</label>                      
-                        <select class="required" name="euResident">
-                            <option value="">- Select one -</option>
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
-                    </div>
-                    <div class="checkboxWrapper">
-                        <div class="inputWrapper checkbox">
-                            <input type="checkbox" id="advances" name="advances" value="Advances" checked>
-                            <label for="advances">Advances</label><br>
+                <form id="form">
+                    <div class="form">
+                        <div class="inputWrapper">
+                            <label for="firstName">First Name*</label>                      
+                            <input class="required" name="firstName" type="text" />
                         </div>
-                        <div class="inputWrapper checkbox">
-                            <input type="checkbox" id="alerts" name="alerts" value="Alerts">
-                            <label for="alerts">Alerts</label><br>
+                        <div class="inputWrapper">
+                            <label for="lastName">Last Name*</label>                      
+                            <input class="required" name="lastName" type="text" />
                         </div>
-                        <div class="inputWrapper checkbox">
-                            <input type="checkbox" id="other" name="other" value="Other">
-                            <label for="alerts">Other Communications</label><br>
+                        <div class="inputWrapper">
+                            <label for="email">Email Address*</label>                      
+                            <input class="required" name="email" type="email" />
+                        </div>
+                        <div class="inputWrapper">
+                            <label for="org">Organization</label>                      
+                            <input name="org" type="text" />
+                        </div>
+                        <div class="inputWrapper combo">
+                            <label for="euResident">EU Resident*</label>                      
+                            <select class="required" name="euResident">
+                                <option value="">- Select one -</option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="checkboxWrapper">
+                            <div class="inputWrapper checkbox">
+                                <input type="checkbox" id="advances" name="advances" value="Advances" checked>
+                                <label for="advances">Advances</label><br>
+                            </div>
+                            <div class="inputWrapper checkbox">
+                                <input type="checkbox" id="alerts" name="alerts" value="Alerts">
+                                <label for="alerts">Alerts</label><br>
+                            </div>
+                            <div class="inputWrapper checkbox">
+                                <input type="checkbox" id="other" name="other" value="Other">
+                                <label for="alerts">Other Communications</label><br>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="submit" type="submit">Submit</button>
+                            <button type="reset">Reset</button>
                         </div>
                     </div>
-                    <div class="buttons">
-                        <button class="submit" type="submit">Submit</button>
-                        <button onclick="resetForm()">Reset</button>
-                    </div>
-                </div>
                 </form>
             </section>
         </div>

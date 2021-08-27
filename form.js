@@ -60,9 +60,10 @@ const submitForm = async (oEvent) => {
     }
 }
 
-const resetForm = () => {
-
+const resetForm = (oEvent) => {
+    $form.reset();
 };
 
 const $form = document.querySelector('form');
 $form.addEventListener('submit', submitForm);
+$form.addEventListener('reset', resetForm);

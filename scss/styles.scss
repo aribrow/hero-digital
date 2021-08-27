@@ -147,6 +147,9 @@ body {
   and (max-device-width: 768px)
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: portrait) {
+    html {
+        font-size: 30px;
+    }
 
     body {
         .main {
@@ -156,10 +159,23 @@ body {
                 .inputWrapper {
                     &.combo {
                         select {
-                            width: 100%;
+                            width: 100%;                            
                         }
                     }
-                }                 
+
+                    &.checkbox {
+                        max-width: 45%;
+                        overflow: hidden;                        
+                        word-break: break-word;
+                    }
+                }  
+                
+                .buttons {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    margin-top: 1rem;
+                }
             }
         }
     }
