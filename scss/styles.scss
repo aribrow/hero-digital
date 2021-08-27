@@ -1,4 +1,4 @@
-@import url('reset.css');
+@import url('/css/reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 html {
@@ -26,112 +26,118 @@ body {
             }
         }
 
-            .form {
+        .form {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 3rem;
+
+            .inputWrapper {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 2rem;
+                min-width: 49%;
+                
+                label {
+                    color: #404040;
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                    text-transform: uppercase;
+                }
+
+                input[type="text"],
+                input[type="email"],
+                select {                
+                    background-color: white !important;        
+                    border-color: #d1e8e6;
+                    border-style: solid;
+                    border-width: 3px;
+                    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+                    height: 2.5rem;
+                    outline: none;
+                    padding-left: 0.5rem;                        
+
+                    &:active {
+                        border-color: #a1d2ce;
+                    }
+
+                    &:disabled {
+                        background-color: #F1F1F1;
+                        border-color: #999;
+                    }
+
+                    &.error {
+                        background-color: #F7E7E6 !important;
+                        border-color: #F294A5;
+                    }
+                }                
+
+                &.combo {
+                    width: 100%;
+
+                    select {
+                        appearance: none;
+                        background: url("/assets/text-expand-arrow.svg") no-repeat;
+                        background-position-x: 95%;
+                        background-position-y: 50%;
+                        background-size: 0.6rem;
+                        height: 3.1rem;
+                        padding-left: 1.2rem;
+                        text-transform: uppercase;
+                        width: 250px;
+                    }
+                }
+
+                &.checkbox {
+                    align-items: center;
+                    flex-direction: row;
+
+                    label {
+                        margin: 0 0 0 1rem;
+                    }
+
+                    input {
+                        box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+                        height: 2rem;
+                        width: 2rem;
+
+                        &:checked {
+                            background-color: #E8E8E8;
+                            border: 0;
+                        }
+                    }
+                }
+            }
+
+            .checkboxWrapper {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                margin-top: 3rem;
+                flex-wrap: wrap;                    
+                width: 100%;
+            }
 
-                .inputWrapper {
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 2rem;
-                    min-width: 49%;
-                    
-                    label {
-                        color: #404040;
-                        font-size: 1rem;
-                        margin-bottom: 0.5rem;
-                        text-transform: uppercase;
-                    }
+            .buttons {
+                margin-top: 4rem;
 
-                    input[type="text"],
-                    input[type="email"],
-                    select {                        
-                        border-color: #d1e8e6;
-                        border-style: solid;
-                        border-width: 3px;
-                        box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
-                        height: 2.5rem;
-                        outline: none;
-                        padding-left: 0.5rem;                        
+                button {
+                    background-color: white;
+                    border: none;
+                    border-radius: 3.5rem;
+                    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
+                    cursor: pointer;
+                    height: 3.5rem;
+                    outline: none;
+                    text-transform: uppercase;
+                    width: 12rem;
 
-                        &:active {
-                            border-color: #a1d2ce;
-                        }
-
-                        &:disabled {
-                            background-color: #F1F1F1;
-                            border-color: #999;
-                        }
-                    }                
-
-                    &.combo {
-                        width: 100%;
-
-                        select {
-                            appearance: none;
-                            background: white url("/assets/text-expand-arrow.svg") no-repeat;
-                            background-position-x: 95%;
-                            background-position-y: 50%;
-                            background-size: 0.6rem;
-                            height: 3.1rem;
-                            padding-left: 1.2rem;
-                            text-transform: uppercase;
-                            width: 250px;
-                        }
-                    }
-
-                    &.checkbox {
-                        align-items: center;
-                        flex-direction: row;
-
-                        label {
-                            margin: 0 0 0 1rem;
-                        }
-
-                        input {
-                            box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
-                            height: 2rem;
-                            width: 2rem;
-
-                            &:checked {
-                                background-color: #E8E8E8;
-                                border: 0;
-                            }
-                        }
+                    &.submit {
+                        background-color: #813093;
+                        color: white;
+                        margin-right: 1.5rem;
                     }
                 }
-
-                .checkboxWrapper {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;                    
-                    width: 100%;
-                }
-
-                .buttons {
-                    margin-top: 4rem;
-
-                    button {
-                        background-color: white;
-                        border: none;
-                        border-radius: 3.5rem;
-                        box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.4);
-                        cursor: pointer;
-                        height: 3.5rem;
-                        outline: none;
-                        text-transform: uppercase;
-                        width: 12rem;
-
-                        &.submit {
-                            background-color: #813093;
-                            color: white;
-                            margin-right: 1.5rem;
-                        }
-                    }
-                }
+            }
             
         }
     }
@@ -145,17 +151,15 @@ body {
     body {
         .main {
             .form {            
-                form {
-                    flex-direction: column;
+                flex-direction: column;
 
-                    .inputWrapper {
-                        &.combo {
-                            select {
-                                width: 100%;
-                            }
+                .inputWrapper {
+                    &.combo {
+                        select {
+                            width: 100%;
                         }
                     }
-                }
+                }                 
             }
         }
     }

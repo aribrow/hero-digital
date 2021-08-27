@@ -1,4 +1,4 @@
-@import url("reset.css");
+@import url("/css/reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
 html {
   font-size: 14px;
@@ -35,6 +35,7 @@ body {
         body .main .form .inputWrapper input[type="text"],
         body .main .form .inputWrapper input[type="email"],
         body .main .form .inputWrapper select {
+          background-color: white !important;
           border-color: #d1e8e6;
           border-style: solid;
           border-width: 3px;
@@ -51,11 +52,16 @@ body {
           body .main .form .inputWrapper select:disabled {
             background-color: #F1F1F1;
             border-color: #999; }
+          body .main .form .inputWrapper input[type="text"].error,
+          body .main .form .inputWrapper input[type="email"].error,
+          body .main .form .inputWrapper select.error {
+            background-color: #F7E7E6 !important;
+            border-color: #F294A5; }
         body .main .form .inputWrapper.combo {
           width: 100%; }
           body .main .form .inputWrapper.combo select {
             appearance: none;
-            background: white url("/assets/text-expand-arrow.svg") no-repeat;
+            background: url("/assets/text-expand-arrow.svg") no-repeat;
             background-position-x: 95%;
             background-position-y: 50%;
             background-size: 0.6rem;
@@ -98,7 +104,7 @@ body {
             margin-right: 1.5rem; }
 
 @media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
-  body .main .form form {
+  body .main .form {
     flex-direction: column; }
-    body .main .form form .inputWrapper.combo select {
+    body .main .form .inputWrapper.combo select {
       width: 100%; } }
