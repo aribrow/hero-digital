@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Hero Digital Test</title>
+        <link rel="stylesheet" type="text/css" href="scss/styles.css" />
+    </head>
+
+    <body>
+
+        <div id="app">
+            <section class="main">
+                <header>
+                    <h1>Sign up for email updates</h1>
+                    <h3>*Indicates Required Field</h3>
+                </header>
+
+                <div class="form">
+                    <div class="inputWrapper">
+                        <label>First Name*</label>                      
+                        <input class="required" id="first-name" type="text" />
+                    </div>
+                    <div class="inputWrapper">
+                        <label>Last Name*</label>                      
+                        <input class="required" id="last-name" type="text" />
+                    </div>
+                    <div class="inputWrapper">
+                        <label>Email Adress*</label>                      
+                        <input class="required" id="first-name" type="email" />
+                    </div>
+                    <div class="inputWrapper">
+                        <label>Organization</label>                      
+                        <input id="last-name" type="text" />
+                    </div>
+                    <div class="inputWrapper combo">
+                        <label>EU Resident*</label>                      
+                        <select class="required" id="eu-resident">
+                            <option value="">- Select one -</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="checkboxWrapper">
+                        <div class="inputWrapper checkbox">
+                            <input type="checkbox" id="advances" name="advances" value="Advances" checked>
+                            <label for="advances">Advances</label><br>
+                        </div>
+                        <div class="inputWrapper checkbox">
+                            <input type="checkbox" id="alerts" name="alerts" value="Alerts">
+                            <label for="alerts">Alerts</label><br>
+                        </div>
+                        <div class="inputWrapper checkbox">
+                            <input type="checkbox" id="other" name="other" value="Other">
+                            <label for="alerts">Other Communications</label><br>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="submit" onclick="validateForm()">Submit</button>
+                        <button onclick="resetForm()">Reset</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <script src="./form.js"></script>
+    </body>
+</html>
