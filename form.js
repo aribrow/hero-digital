@@ -52,8 +52,11 @@ const submitForm = async (oEvent) => {
             if (oResponse.status >= 400) {
                 throw new Error(oResponseBody.message);
             }
-                            
-            console.log(oResponseBody);
+            
+            const $message = document.getElementById("message");
+            const $mainContainer = document.getElementById("main");
+            $mainContainer.classList.add("hidden");
+            $message.innerText = oResponseBody.message;
         } catch (e) {
             console.error(e);
         }
