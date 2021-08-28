@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname));
 
 app.post("/api/submit", (req, res) => {
-    console.log(req.body);
     res.json({ 
         status: "success", 
         message: "Thank you. You are now subscribed." 

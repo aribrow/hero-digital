@@ -37,9 +37,18 @@ body {
             .inputWrapper {
                 display: flex;
                 flex-direction: column;
-                margin-bottom: 2rem;
+                margin-bottom: 2.5rem;
                 min-width: 49%;
+                position: relative;
                 
+                .errorMessage {
+                    color: red;
+                    font-style: italic;
+                    font-weight: 700;
+                    position: absolute;
+                    top: -1.5rem;                    
+                }
+
                 label {
                     color: #404040;
                     font-size: 1rem;
@@ -114,8 +123,18 @@ body {
             .checkboxWrapper {
                 display: flex;
                 flex-direction: row;
-                flex-wrap: wrap;                    
+                flex-wrap: wrap;
+                margin-top: 1rem;
+                position: relative;                    
                 width: 100%;
+
+                .errorMessage {
+                    color: red;
+                    font-style: italic;
+                    font-weight: 700;
+                    position: absolute;
+                    top: -2rem;                    
+                }
             }
 
             .buttons {

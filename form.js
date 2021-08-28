@@ -1,7 +1,10 @@
 const getValidForm = () => {
     const aRequiredFields = document.getElementsByClassName("required");
     const aInvalidFields = Array.from(aRequiredFields).filter(($input) => {
-        if ($input.value === "") {
+        const $errorMessage = $input.parentElement.getElementsByClassName("errorMessage")[0];
+
+        if ($input.value === "") {            
+            $errorMessage.classList.remove("hidden");
             $input.classList.add("error");
             return $input;
         } else {
@@ -9,6 +12,7 @@ const getValidForm = () => {
                 $input.classList.add("error");
                 return $input;
             } else {
+                $errorMessage.classList.add("hidden");
                 $input.classList.remove("error");
             }
         }
@@ -19,6 +23,14 @@ const getValidForm = () => {
             return $checkbox;
         }
     });
+    
+    const $checkboxWrapper = document.getElementsByClassName("checkboxWrapper")[0];
+    const $checkboxError = $checkboxWrapper.getElementsByClassName("errorMessage")[0];
+    if (aCheckedCheckboxes.length === 0) {        
+        $checkboxError.classList.remove("hidden");
+    } else {
+        $checkboxError.classList.add("hidden");
+    }
     
     const bValid = aInvalidFields.length === 0 && aCheckedCheckboxes.length >= 1;
     return bValid;
@@ -37,15 +49,23 @@ const submitForm = async (oEvent) => {
         const oFormFields = new FormData(oEvent.target);
         const oData = Object.fromEntries(oFormFields.entries());
         const sUrl = "http://localhost:5000/api/submit";
+
+        let aFormBody = [];
+        for (const oProperty in oData) {
+            const sEncodedKey = encodeURIComponent(oProperty);
+            const sEncodedValue = encodeURIComponent(oData[oProperty]);
+            aFormBody.push(sEncodedKey + "=" + sEncodedValue);
+        }
+        aFormBody = aFormBody.join("&");
         
         try {
             const oResponse = await fetch(sUrl, {
                 method: "POST",
                 headers: {
                     Accept: 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
                 },
-                body: JSON.stringify(oData)
+                body: aFormBody
             });
 
             const oResponseBody = await oResponse.json();
@@ -63,7 +83,21 @@ const submitForm = async (oEvent) => {
     }
 }
 
-const resetForm = (oEvent) => {
+const resetForm = () => {
+    const $inputWrappers = document.getElementsByClassName("inputWrapper");
+    Array.from($inputWrappers).forEach($inputWrapper => {
+        const $input = $inputWrapper.getElementsByTagName("input")[0] || $inputWrapper.getElementsByTagName("select")[0];
+        const $errorMessage = $inputWrapper.getElementsByClassName("errorMessage")[0];
+        $input.classList.remove("error");
+        
+        if ($errorMessage) {
+            $errorMessage.classList.add("hidden");
+        }
+    })
+    const $checkboxWrapper = document.getElementsByClassName("checkboxWrapper")[0];
+    const $checkboxError = $checkboxWrapper.getElementsByClassName("errorMessage")[0];
+    $checkboxError.classList.add("hidden");
+    
     $form.reset();
 };
 
