@@ -5,7 +5,8 @@ html {
   font-weight: 400; }
 
 body {
-  background-image: url("/assets/texture.png");
+  background-image: url("/assets/texture2.png");
+  background-size: 25rem;
   font-family: 'Open Sans', sans-serif;
   padding: 0; }
   body .main {
@@ -106,16 +107,18 @@ body {
 @media only screen and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   html {
     font-size: 30px; }
-  body .main .form {
-    flex-direction: column; }
-    body .main .form .inputWrapper.combo select {
-      width: 100%; }
-    body .main .form .inputWrapper.checkbox {
-      max-width: 45%;
-      overflow: hidden;
-      word-break: break-word; }
-    body .main .form .buttons {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      margin-top: 1rem; } }
+  body {
+    background-size: 30rem; }
+    body .main .form {
+      flex-direction: column; }
+      body .main .form .inputWrapper.combo select {
+        width: 100%; }
+      body .main .form .inputWrapper.checkbox {
+        max-width: 45%;
+        overflow: hidden;
+        word-break: break-word; }
+      body .main .form .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 1rem; } }

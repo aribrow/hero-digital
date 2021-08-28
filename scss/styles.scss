@@ -7,7 +7,8 @@ html {
 }
 
 body {
-    background-image: url("/assets/texture.png");
+    background-image: url("/assets/texture2.png");
+    background-size: 25rem;
     font-family: 'Open Sans', sans-serif;    
     padding: 0;
 
@@ -152,6 +153,8 @@ body {
     }
 
     body {
+        background-size: 30rem;
+        
         .main {
             .form {            
                 flex-direction: column;
