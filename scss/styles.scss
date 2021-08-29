@@ -33,6 +33,7 @@ body {
             flex-wrap: wrap;
             justify-content: space-between;
             margin-top: 3rem;
+            max-width: 70%;
 
             .inputWrapper {
                 display: flex;
@@ -190,6 +191,7 @@ body {
 
             .form {            
                 flex-direction: column;
+                max-width: 100%;
 
                 .inputWrapper {
                     width: 100%;
